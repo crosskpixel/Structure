@@ -33,11 +33,10 @@ module.exports.authJWT = (req, res, next) => {
         var token = req.headers.authorization.split("Bearer").pop().trim();;
         jwt.verify(token, secret_key, (err, data) => {
             if (err) {
-                res.status(401).json({error:401,msg:"invalid token"});
+                res.status(401).json({ error: 401, msg: "invalid token" });
             } else {
-                console.log("Resultado do token");
-                console.log(data);
-                res.send("finish");
+                req.id = data.id;
+                next();
             }
         })
     }

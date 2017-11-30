@@ -19,10 +19,9 @@ class UserCheck {
                 if (user.length == 0) {
                     return resolve(true)
                 } else {
-                    return reject(false);
+                    return reject({ statusCode: 409, msg: "Este nome de usuario ja está em uso" });
                 }
-            })
-                .catch(err => reject({ msg: "Ocorreu algum erro no banco de dados." }));
+            }).catch(err => reject({ statusCode: 500, msg: "Ocorreu algum erro no banco de dados." }));
         });
     }
 
@@ -42,6 +41,5 @@ class UserCheck {
                 .catch(err => reject({ msg: "Ocorreu algum erro no banco de dados." }));
         });
     }
-
 }
 module.exports = UserCheck;

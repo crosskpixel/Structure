@@ -5,14 +5,15 @@ let cors = require("cors");
 
 module.exports = (app) => {
     app.use(_express.static(path.join(app.ROOT_PATH, "public")));
-    app.set('views', path.join(app.ROOT_PATH, "views"));
+    app.set('views', path.join(app.ROOT_PATH, "/views"));
     app.set('view engine', 'ejs');
 
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.urlencoded({ extended: true }));
 
     app.use(cors({ origin: "*", allowedHeaders: ["Content-Type", "Authorization"] }));
     app.use((req, res, next) => {
+        req.id = null;
         req.ROOT_PATH = app.ROOT_PATH;
         res.setHeader("Cache-Control", 'no-cache');
         res.setHeader('Access-Control-Allow-Origin', '*');

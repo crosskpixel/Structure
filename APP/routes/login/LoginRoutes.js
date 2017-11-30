@@ -8,6 +8,11 @@ module.exports = (app) => {
         }).catch(err => res.status(401).json({ msg: err }));
     });
 
-    app.post("/auth",jwtApp.authJWT);
 
+
+    app.post("/auth", jwtApp.authJWT, (req, res) => {
+        console.log(req.id);
+        res.send('opa');
+
+    });
 }
