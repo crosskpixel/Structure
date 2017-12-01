@@ -16,11 +16,11 @@ class Nodemailer {
         });
     }
 
-    setContent(title, text, html = "<div></div>", emailFor) {
+    setContent(title, text, subject = "", html = "<div></div>", from = email, emailFor) {
         this.optionsOfSend = {
-            from: `"Igor" <${email}>`,
+            from: `"${from}" <${email}>`,
             to: emailFor,
-            subject: 'Hello ✔',
+            subject: subject,
             text: title,
             html: html
         };
