@@ -2,7 +2,7 @@ var path = require('path');
 var fs = require('fs');
 var Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('database', 'mactus', 'macinfo', {	//configuracao do banco de dados
+const sequelize = new Sequelize('database', '???', '???', {	//configuracao do banco de dados
     host: '192.168.1.105',
     dialect: 'mysql',
     pool: {
