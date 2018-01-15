@@ -1,7 +1,7 @@
 var path = require('path');
 var fs = require('fs');
 var Sequelize = require('sequelize');
-const { url, database, user, password, dialect } = (process.env.NODE_ENV == 'production' ? require("./../../package.json").production : require("./../../package.json").dev);
+const { url, database, user, password, dialect } = (process.env.NODE_ENV.trim() == 'production' ? require("./../../package.json").production : require("./../../package.json").dev);
 
 const sequelize = new Sequelize(database, user, password, {	//configuracao do banco de dados
     host: url,

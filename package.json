@@ -26,10 +26,10 @@
     "standard": "^10.0.3"
   },
   "production": {
-    "url": "",
-    "database": "",
-    "user": "",
-    "password": "",
+    "url": "192.168.2.63",
+    "database": "database",
+    "user": "user",
+    "password": "password",
     "dialect": "mysql"
   },
   "dev": {
