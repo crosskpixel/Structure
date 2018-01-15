@@ -14,4 +14,5 @@ consign()
 
 let server = http.createServer(app);
 io.attach(server);
-server.listen(80);
+console.log(`SERVIDOR NA PORTA ${(process.env.NODE_ENV == 'production' ? 3000 : 80)}`)
+server.listen((process.env.NODE_ENV == 'production' ? 3000 : 80));

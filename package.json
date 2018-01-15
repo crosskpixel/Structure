@@ -1,11 +1,11 @@
 {
-  "name": "jwt-nodeconf",
+  "name": "default",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "set NODE_ENV=production && node server.js",
+    "test": "set NODE_ENV=dev && nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,5 +24,19 @@
     "sequelize": "4.23.2",
     "socket.io": "^2.0.4",
     "standard": "^10.0.3"
+  },
+  "production": {
+    "url": "",
+    "database": "",
+    "user": "",
+    "password": "",
+    "dialect": "mysql"
+  },
+  "dev": {
+    "url": "192.168.2.63",
+    "database": "database",
+    "user": "user",
+    "password": "password",
+    "dialect": "mysql"
   }
 }

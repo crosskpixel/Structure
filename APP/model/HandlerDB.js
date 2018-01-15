@@ -1,10 +1,11 @@
 var path = require('path');
 var fs = require('fs');
 var Sequelize = require('sequelize');
+const { url, database, user, password, dialect } = (process.env.NODE_ENV == 'production' ? require("./../../package.json").production : require("./../../package.json").dev);
 
-const sequelize = new Sequelize('database', '???', '???', {	//configuracao do banco de dados
-    host: '192.168.1.105',
-    dialect: 'mysql',
+const sequelize = new Sequelize(database, user, password, {	//configuracao do banco de dados
+    host: url,
+    dialect: dialect,
     pool: {
         max: 20,
         min: 0,
