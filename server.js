@@ -4,6 +4,7 @@ const init = function () {
     let io = require("socket.io")();
     let app = require("express")();
     app.ROOT_PATH = __dirname;
+
     require("./config-express")(app);
     require("./config-socket_io.js")(io);
     app.io = io;

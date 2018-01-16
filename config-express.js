@@ -24,6 +24,7 @@ module.exports = (app) => {
         next();
     });
 
+
     //Configurações do SequelizeJS
     var db = require("./APP/model/HandlerDB.js");
     db.sequelize.sync({ force: false }).then(() => console.log("DATABASE-CREATED"));
