@@ -6,8 +6,6 @@ const init = function () {
     app.ROOT_PATH = __dirname;
 
     require("./config-express")(app);
-    require("./config-socket_io.js")(io);
-    app.io = io;
 
     consign()
         .include("app/routes")

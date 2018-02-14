@@ -16,6 +16,7 @@
     "ejs": "2.5.7",
     "express": "^4.16.2",
     "express-validator": "4.3.0",
+    "handlebars": "^4.0.11",
     "jsonwebtoken": "^8.1.0",
     "lodash": "4.17.4",
     "mysql2": "1.5.1",
